@@ -37,30 +37,40 @@ function desencriptarTexto(texto) {
                 if (texto[i + 1] == "i") {
                     nuevoString = nuevoString + "a";
                     i++;
+                } else {
+                    nuevoString = nuevoString + texto[i];
                 }
                 break;
             case "e":
                 if (texto[i + 1] == "n" && texto[i + 2] == "t" && texto[i + 3] == "e" && texto[i + 4] == "r") {
                     nuevoString = nuevoString + "e";
                     i = i + 4;
+                } else {
+                    nuevoString = nuevoString + texto[i];
                 }
                 break;
             case "i":
                 if (texto[i + 1] == "m" && texto[i + 2] == "e" && texto[i + 3] == "s") {
                     nuevoString = nuevoString + "i";
                     i = i + 3;
+                } else {
+                    nuevoString = nuevoString + texto[i];
                 }
                 break;
             case "o":
                 if (texto[i + 1] == "b" && texto[i + 2] == "e" && texto[i + 3] == "r") {
                     nuevoString = nuevoString + "o";
                     i = i + 3;
+                } else {
+                    nuevoString = nuevoString + texto[i];
                 }
                 break;
             case "u":
                 if (texto[i + 1] == "f" && texto[i + 2] == "a" && texto[i + 3] == "t") {
                     nuevoString = nuevoString + "u";
                     i = i + 3;
+                } else {
+                    nuevoString = nuevoString + texto[i];
                 }
                 break;
             default:
@@ -76,6 +86,7 @@ function textoEntrada() {
     let entrada = document.getElementById("entrada");
     let salida = document.getElementById("salida");
     let texto = entrada.value;
+    ocultarImagen();
 
     if (texto.trim() == "") {
         alert("No ingresó ningún texto para encriptar.");
@@ -88,6 +99,7 @@ function textoEntrada() {
 function textoSalida() {
     let salida = document.getElementById("salida");
     let texto = entrada.value;
+    ocultarImagen();
 
     if (texto.trim() == "") {
         alert("No ingresó ningún texto para desencriptar.");
