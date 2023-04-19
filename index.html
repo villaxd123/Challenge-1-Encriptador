@@ -14,28 +14,60 @@
         <header>
             <nav>
                 <ul class="top-elements">
-                    <li><img class="logo-alura" src="pictures/logo-alura.png" alt="Logo de Alura." /></li>
-                    <li><h1 class="titulo">Encriptador</h1></li>
-                    <li><img class="logo-github" src="pictures/logo-github.png" alt="Logo de GitHub." /></li>
+                    <li class="medio"><h1 class="titulo">Encriptador</h1></li>
                 </ul>
             </nav>
-            <main>
-                <div>
-                    <ul class="bottom-elements">
-                        <li><input class="entrada" type="text" placeholder="Ingrese el texto aquí..." /></li>
-                        <li><input class="salida" type="text" disabled="true" /></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="click-elements">
-                        <li>
-                            <button class="encriptar">Encriptar</button>
-                            <button class="desencriptar">Desencriptar</button>
-                        </li>
-                        <li><button class="copiar">Copiar</button></li>
-                    </ul>
-                </div>
-            </main>
         </header>
+        <main>
+            <div>
+                <ul class="bottom-elements">
+                    <li>
+                        <textarea
+                            class="entrada"
+                            id="entrada"
+                            type="text"
+                            placeholder="Ingrese el texto aquí..."
+                        ></textarea>
+                    </li>
+                    <li>
+                        <button class="encriptar" id="my-text" onclick="textoEntrada()">Encriptar</button>
+                        <button class="desencriptar" onclick="textoSalida()">Desencriptar</button>
+                    </li>
+                </ul>
+                <p class="aviso">Escriba, únicamente, letras minúsculas y sin acento.</p>
+            </div>
+            <div>
+                <ul class="click-elements">
+                    <li>
+                        <textarea class="salida" id="salida" type="text" disabled="true"></textarea>
+                    </li>
+                    <li id="unactivated" class="unactivated">
+                        <!--<a href="https://www.freepik.es/vector-gratis/ilustracion-concepto-manicurista_9932808.htm">Imagen de storyset</a> en Freepik-->
+                        <img id="img-1" class="img-1" src="pictures/waiting.jpg" alt="Esperando..." />
+                    </li>
+                    <li><button class="copiar" onclick="copiarTexto()">Copiar</button></li>
+                </ul>
+            </div>
+        </main>
     </body>
+    <script src="javascript/script.js"></script>
+    <footer>
+        <ul class="footer">
+            <li class="nombre"><h2 class="made-by">Jorge Luis Villafuerte Juape</h2></li>
+            <li class="logo">
+                <a
+                    href="https://www.linkedin.com/in/jorge-villafuerte-71b018143/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    <img class="logo-linkedin" src="pictures/logo-linkedin.png" alt="Logo de LinkedIn." />
+                </a>
+            </li>
+            <li class="logo">
+                <a href="https://github.com/villaxd123" rel="noopener noreferrer" target="_blank">
+                    <img class="logo-github" src="pictures/logo-github.png" alt="Logo de GitHub." />
+                </a>
+            </li>
+        </ul>
+    </footer>
 </html>
