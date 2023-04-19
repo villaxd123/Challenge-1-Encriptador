@@ -79,8 +79,6 @@ function textoEntrada() {
 
     if (texto.trim() == "") {
         alert("No ingresó ningún texto para encriptar.");
-    } else {
-        ocultarImagen();
     }
 
     let resultadoTexto = encriptarTexto(texto);
