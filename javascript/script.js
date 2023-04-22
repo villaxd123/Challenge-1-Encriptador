@@ -81,6 +81,19 @@ function desencriptarTexto(texto) {
 
     return nuevoString;
 }
+function comprobarTexto(texto) {
+    let estadoTexto = true;
+    let tempChar = "";
+
+    for (let i = 0; i < texto.length; i++) {
+        tempChar = texto[i];
+        if (tempChar != texto[i].toLowerCase()) {
+            estadoTexto = false;
+            break;
+        }
+    }
+    return estadoTexto;
+}
 // Función llamada al precionar el botón de "Encriptar".
 function textoEntrada() {
     let entrada = document.getElementById("entrada");
@@ -92,8 +105,13 @@ function textoEntrada() {
         alert("No ingresó ningún texto para encriptar.");
     }
 
-    let resultadoTexto = encriptarTexto(texto);
-    salida.value = resultadoTexto;
+    let comprobado = comprobarTexto(texto);
+    if (comprobado) {
+        let resultadoTexto = encriptarTexto(texto);
+        salida.value = resultadoTexto;
+    } else {
+        alert("No debe ingresar mayúsculas.");
+    }
 }
 // Función llamada al precionar el botón de "Desencriptar".
 function textoSalida() {
@@ -116,8 +134,13 @@ function textoSalida() {
         });
     */
 
-    let resultadoTexto = desencriptarTexto(texto);
-    salida.value = resultadoTexto;
+    let comprobado = comprobarTexto(texto);
+    if (comprobado) {
+        let resultadoTexto = desencriptarTexto(texto);
+        salida.value = resultadoTexto;
+    } else {
+        alert("No debe ingresar mayúsculas.");
+    }
 }
 // Función llamada al precionar el botón de "Copiar".
 function copiarTexto() {
