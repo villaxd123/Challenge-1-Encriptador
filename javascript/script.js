@@ -81,18 +81,18 @@ function desencriptarTexto(texto) {
 
     return nuevoString;
 }
+// Función para comprobar que el texto no tenga mayúsculas, números o caracteres especiales.
 function comprobarTexto(texto) {
-    let estadoTexto = true;
-    let tempChar = "";
-
-    for (let i = 0; i < texto.length; i++) {
-        tempChar = texto[i];
-        if (tempChar != texto[i].toLowerCase()) {
-            estadoTexto = false;
-            break;
-        }
-    }
-    return estadoTexto;
+    /*
+    RegExp -> comprueba el texto con el patrón ingresado entre los paréntesis.
+    [a-z] -> rango de letras permitidas (sólo minúsuclas).
+    \s -> comprueba espacios como válidos.
+    ^ y $ -> son aserciones que comprueban valores devolviendo un boolean. ^ comprueba al inicio y $ al final.
+    + -> cuantificador que comprueba todas las incidencias (1 o más veces el elemento anterior -> x+).
+    */
+    const pattern = new RegExp(/^[a-z\s]+$/g);
+    // test() -> comprueba la coincidencia y devuelve de valor true o false.
+    return pattern.test(texto);
 }
 // Función llamada al precionar el botón de "Encriptar".
 function textoEntrada() {
@@ -110,7 +110,7 @@ function textoEntrada() {
         let resultadoTexto = encriptarTexto(texto);
         salida.value = resultadoTexto;
     } else {
-        alert("No debe ingresar mayúsculas.");
+        alert("No debe ingresar mayúsculas, números o caracteres especiales.");
     }
 }
 // Función llamada al precionar el botón de "Desencriptar".
@@ -123,23 +123,12 @@ function textoSalida() {
         alert("No ingresó ningún texto para desencriptar.");
     }
 
-    /* Copiar del portapapeles (No es totalmente necesario).
-    navigator.clipboard
-        .readText()
-        .then((text) => {
-            document.getElementById("entrada").value = text;
-        })
-        .catch((error) => {
-            alert("Error al leer del portapapeles:", error);
-        });
-    */
-
     let comprobado = comprobarTexto(texto);
     if (comprobado) {
         let resultadoTexto = desencriptarTexto(texto);
         salida.value = resultadoTexto;
     } else {
-        alert("No debe ingresar mayúsculas.");
+        alert("No debe ingresar mayúsculas, números o caracteres especiales.");
     }
 }
 // Función llamada al precionar el botón de "Copiar".
