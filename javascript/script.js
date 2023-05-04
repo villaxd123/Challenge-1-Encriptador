@@ -1,85 +1,26 @@
 // Función que encripta el texto.
 function encriptarTexto(texto) {
-    let nuevoString = "";
+    // Se cambió el método de encriptado mediante RegExp.
+    let regTextEncript = texto
+        .replace(/a/g, "ai")
+        .replace(/e/g, "enter")
+        .replace(/i/g, "imes")
+        .replace(/o/g, "ober")
+        .replace(/u/g, "ufat");
 
-    for (let i = 0; i < texto.length; i++) {
-        switch (texto[i]) {
-            case "a":
-                nuevoString = nuevoString + "ai";
-                break;
-            case "e":
-                nuevoString = nuevoString + "enter";
-                break;
-            case "i":
-                nuevoString = nuevoString + "imes";
-                break;
-            case "o":
-                nuevoString = nuevoString + "ober";
-                break;
-            case "u":
-                nuevoString = nuevoString + "ufat";
-                break;
-            default:
-                nuevoString = nuevoString + texto[i];
-                break;
-        }
-    }
-
-    return nuevoString;
+    return regTextEncript;
 }
 // Función que desencripta el texto.
 function desencriptarTexto(texto) {
-    let nuevoString = "";
+    // Se cambió el método de desencriptado mediante RegExp
+    let regTextDecript = texto
+        .replace(/ai/g, "a")
+        .replace(/enter/g, "e")
+        .replace(/imes/g, "i")
+        .replace(/ober/g, "o")
+        .replace(/ufat/g, "u");
 
-    for (let i = 0; i < texto.length; i++) {
-        switch (texto[i]) {
-            case "a":
-                if (texto[i + 1] == "i") {
-                    nuevoString = nuevoString + "a";
-                    i++;
-                } else {
-                    nuevoString = nuevoString + texto[i];
-                }
-                break;
-            case "e":
-                if (texto[i + 1] == "n" && texto[i + 2] == "t" && texto[i + 3] == "e" && texto[i + 4] == "r") {
-                    nuevoString = nuevoString + "e";
-                    i = i + 4;
-                } else {
-                    nuevoString = nuevoString + texto[i];
-                }
-                break;
-            case "i":
-                if (texto[i + 1] == "m" && texto[i + 2] == "e" && texto[i + 3] == "s") {
-                    nuevoString = nuevoString + "i";
-                    i = i + 3;
-                } else {
-                    nuevoString = nuevoString + texto[i];
-                }
-                break;
-            case "o":
-                if (texto[i + 1] == "b" && texto[i + 2] == "e" && texto[i + 3] == "r") {
-                    nuevoString = nuevoString + "o";
-                    i = i + 3;
-                } else {
-                    nuevoString = nuevoString + texto[i];
-                }
-                break;
-            case "u":
-                if (texto[i + 1] == "f" && texto[i + 2] == "a" && texto[i + 3] == "t") {
-                    nuevoString = nuevoString + "u";
-                    i = i + 3;
-                } else {
-                    nuevoString = nuevoString + texto[i];
-                }
-                break;
-            default:
-                nuevoString = nuevoString + texto[i];
-                break;
-        }
-    }
-
-    return nuevoString;
+    return regTextDecript;
 }
 // Función para comprobar que el texto no tenga mayúsculas, números o caracteres especiales.
 function comprobarTexto(texto) {
