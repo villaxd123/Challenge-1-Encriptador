@@ -35,6 +35,16 @@ function comprobarTexto(texto) {
     // test() -> comprueba la coincidencia y devuelve de valor true o false.
     return pattern.test(texto);
 }
+// Funcion para ocultar la imagen de espera.
+function ocultarImagen() {
+    let salidaActiva = document.getElementById("salida");
+    let imagenPasiva = document.getElementById("img-1");
+    let listaImagen = document.getElementById("unactivated");
+
+    salidaActiva.style.display = "inline-block";
+    imagenPasiva.style.display = "none";
+    listaImagen.style.display = "none";
+}
 // Función llamada al precionar el botón de "Encriptar".
 function textoEntrada() {
     let entrada = document.getElementById("entrada");
@@ -42,7 +52,7 @@ function textoEntrada() {
     let texto = entrada.value;
     ocultarImagen();
 
-    if (texto.trim() == "") {
+    if (texto.trim() === "") {
         alert("No ingresó ningún texto para encriptar.");
     }
 
@@ -60,7 +70,7 @@ function textoSalida() {
     let texto = entrada.value;
     ocultarImagen();
 
-    if (texto.trim() == "") {
+    if (texto.trim() === "") {
         alert("No ingresó ningún texto para desencriptar.");
     }
 
@@ -81,21 +91,11 @@ function copiarTexto() {
     navigator.clipboard
         .writeText(texto)
         .then(() => {
-            if (texto.trim() == "") {
+            if (texto.trim() === "") {
                 alert("No se encontró algún texto para copiar.");
             }
         })
         .catch((error) => {
             alert("Error al copiar el texto:", error);
         });
-}
-// Funcion para ocultar la imagen de espera.
-function ocultarImagen() {
-    let salidaActiva = document.getElementById("salida");
-    let imagenPasiva = document.getElementById("img-1");
-    let listaImagen = document.getElementById("unactivated");
-
-    salidaActiva.style.display = "inline-block";
-    imagenPasiva.style.display = "none";
-    listaImagen.style.display = "none";
 }
