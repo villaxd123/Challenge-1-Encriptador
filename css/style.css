@@ -1,271 +1,181 @@
-nav {
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(90.22deg, #127efe 0%, #b265ff 100%);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 0px 25px 25px;
-    transition: 0.5s all;
-}
-
-.top-elements {
-    padding: 25px 0;
-    display: flex;
-    width: 100%;
-    height: 50px;
-    justify-content: center;
-    transition: 0.5s all;
-}
-
-.medio {
-    width: 100%;
-}
-
-.top-elements li {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.titulo {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    font-family: "Jost", sans-serif;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s all;
-}
-
-.bottom-elements {
-    padding-top: 40px;
-}
-
-.bottom-elements li:first-child {
-    align-items: center;
-    width: 90%;
-    margin: 0 5% 0 5%;
-}
-
-.bottom-elements li:last-child {
-    display: inline-flex;
-    width: 60%;
-    margin: 15px 5% 15px 5%;
-}
-
-.entrada {
-    width: 100%;
-    height: 150px;
-    border: 0px;
-    outline: none;
-    background: linear-gradient(117.03deg, #00a3ff 0%, rgba(85, 255, 204, 0.574928) 100%);
-    box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.25), inset 5px 5px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
-    font-family: "Jost", sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 46px;
-    text-align: center;
+* {
+    margin: 0;
     color: white;
+    font-family: "Inter", sans-serif;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    background: linear-gradient(180deg, rgb(1, 9, 60) 0%, rgb(89, 45, 210) 100%) no-repeat;
+}
+
+header {
+    margin: 2rem 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.7s all;
+}
+
+h1:hover {
+    transform: scale(1.15);
+}
+
+.container {
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.flex-item {
+    display: block;
+    margin: 0 2%;
+    width: 40%;
+}
+
+textarea {
+    width: calc(100% - 54px);
+    height: 300px;
+    padding: 2rem 1.5rem;
+    text-transform: lowercase;
+    text-align: center;
+    font-size: 1.5rem;
     transition: 0.5s all;
+    border-radius: 25px;
+    border: 3px solid #ffffff00;
+    background-color: #ffffff00;
+    box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.4) inset;
+    outline: none;
     resize: none;
 }
 
-.entrada::placeholder {
-    text-align: center;
-    color: white;
-}
-
-.encriptar {
-    background: #5d77ff;
-    color: white;
-    width: 20%;
-    margin-right: 10px;
-    transition: 0.5s all;
-}
-
-.desencriptar {
-    background: #e386f2;
-    color: white;
-    width: 20%;
-    margin-left: 10px;
-    transition: 0.5s all;
+textarea:hover {
+    border: 3px solid #592dd1;
 }
 
 .aviso {
-    width: 60%;
-    height: 10px;
-    font-family: "Jost", sans-serif;
-    font-weight: bold;
-    font-size: 12px;
-    text-align: center;
-    align-items: center;
+    padding: 0.5rem 0 0 2rem;
+    position: absolute;
+    font-size: 0.75rem;
+    color: #acacac;
+    transition: 0.3s all;
+}
+
+#second {
+    background-image: url("/img/time.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.buttons {
+    display: flex;
     justify-content: center;
-    margin: 0 5% 0 5%;
-    transition: 0.5s all;
-}
-
-.salida {
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(155.18deg, #3cfbc2 0%, rgba(122, 246, 112, 0.5) 100%);
-    box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.25), inset 5px 5px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 35px;
-    font-family: "Jost", sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 46px;
-    text-align: center;
-    color: white;
-    transition: 0.5s all;
-    resize: none;
-    display: none;
-}
-
-.unactivated {
-    width: 90%;
-    margin: -30px 5% 0 5%;
-}
-
-.img-1 {
-    padding: 0 30% 0 30%;
-    width: 40%;
-    transition: 0s all;
-}
-
-.click-elements {
-    padding-top: 20px;
-}
-
-.click-elements li {
-    display: inline-block;
-    align-items: center;
-}
-
-.click-elements li:first-child {
-    display: inline-flex;
-    width: 90%;
-    margin: 0 5% 0 5%;
-}
-
-.click-elements li:last-child {
-    width: 30%;
-    margin: 15px 5% 15px 5%;
-}
-
-.copiar {
-    background: #c5b1fe;
-    color: white;
-    width: 100%;
-    transition: 0.5s all;
+    gap: 15px;
+    margin-top: 5px;
 }
 
 button {
-    height: 60px;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25), inset -5px -5px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
-    font-family: "Jost", sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 46px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    border: none;
+    width: 130px;
+    border-radius: 15px;
+    border: 3px solid #592dd1;
+    background: #ffffff00;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    margin-top: 10px;
     cursor: pointer;
-    padding-inline: 25%;
-    justify-content: center;
-}
-
-footer {
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(90.22deg, #127efe 0%, #b265ff 100%);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 25px 25px 0px 0px;
     transition: 0.5s all;
 }
 
-.footer {
+button:hover {
+    border: 3px solid #fff;
+}
+
+.about {
     display: flex;
-    align-items: center;
-    flex-direction: row;
+    margin: 3rem 0 1rem 0;
     justify-content: center;
-    width: 100%;
-    height: 50px;
 }
 
-.footer li {
-    height: 100%;
+.about div {
+    padding-left: 2rem;
 }
 
-.nombre {
-    width: 80%;
+.myname {
+    padding: 0.5rem;
+    font-size: 2rem;
+    font-weight: 300;
+    transition: 0.7s all;
 }
 
-.logo {
-    width: 10%;
+.myname:hover {
+    transform: scale(1.05);
 }
 
-.made-by {
-    width: 100%;
-    height: 30px;
-    padding-top: 10px;
-    padding-left: 5%;
-    font-family: "Jost", sans-serif;
-    font-size: 25px;
+.pictures {
     display: flex;
-    align-items: center;
-    justify-content: left;
+    max-width: 100%;
+    max-height: 100%;
+    gap: 2rem;
+    justify-content: flex-end;
+}
+
+.pictures a img {
+    height: 2rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    border: 3px solid #ffffff00;
     transition: 0.5s all;
-    color: white;
 }
 
-.logo-linkedin {
-    padding-top: 10px;
-    height: 30px;
+.pictures a img:hover {
+    border: 3px solid #fff;
 }
 
-.logo-github {
-    padding-top: 10px;
-    height: 30px;
-}
-
-@media screen and (max-width: 768px) {
-    nav {
-        height: 50px;
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .container {
+        display: inline;
+    }
+    .flex-item {
+        margin: 3% auto;
+        width: 80%;
+    }
+    textarea {
+        width: calc(100% - 54px);
+        height: 150px;
+    }
+    .buttons {
+        gap: 0;
+    }
+    #btn1 {
+        margin-right: 1rem;
+    }
+    #btn2 {
+        margin-left: 1rem;
+    }
+    #btn3 {
+        border: 3px solid #021069;
         transition: 0.5s all;
     }
-    .top-elements {
-        padding: 10px 0;
-        height: 30px;
-        transition: 0.5s all;
+    #btn3:hover {
+        border: 3px solid #fff;
     }
-    .titulo {
-        font-size: 25px;
-        height: 30px;
-        transition: 0.5s all;
+    .myname {
+        font-weight: 200;
+        font-size: 1.25rem;
+        padding: 1rem;
     }
-    .encriptar,
-    .desencriptar,
-    .copiar {
-        font-size: 18px;
-        transition: 0.5s all;
-    }
-    .entrada,
-    .salida {
-        font-size: 25px;
-        transition: 0.5s all;
-    }
-    .aviso {
-        font-size: 11px;
-        transition: 0.5s all;
-    }
-    .made-by {
-        font-size: 17px;
+    .pictures {
+        gap: 0.5rem;
     }
 }
