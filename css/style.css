@@ -22,6 +22,8 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     transition: 0.7s all;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 h1:hover {
