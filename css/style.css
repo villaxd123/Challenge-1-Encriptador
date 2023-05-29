@@ -71,7 +71,7 @@ textarea:hover {
 }
 
 #second {
-    background-image: url("/img/time.png");
+    background-image: url("../img/time.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto;
