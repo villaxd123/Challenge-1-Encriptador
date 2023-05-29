@@ -33,7 +33,7 @@ function comprobarTexto(texto) {
     */
     const pattern = new RegExp(/^[a-z\s]+$/g);
     // test() -> comprueba la coincidencia y devuelve de valor true o false.
-    return pattern.test(texto);
+    return pattern.test(texto.toLowerCase());
 }
 // Funcion para ocultar la imagen de espera.
 function ocultarImagen() {
@@ -51,8 +51,9 @@ function textoEntrada() {
     else {
         let comprobado = comprobarTexto(texto);
         if (comprobado) {
-            let resultadoTexto = encriptarTexto(texto);
+            let resultadoTexto = encriptarTexto(texto.toLowerCase());
             salida.value = resultadoTexto;
+            document.getElementById("first").value = "";
         } else {
             alert("No debe ingresar números o caracteres especiales.");
         }
@@ -69,10 +70,11 @@ function textoSalida() {
     } else {
         let comprobado = comprobarTexto(texto);
         if (comprobado) {
-            let resultadoTexto = desencriptarTexto(texto);
+            let resultadoTexto = desencriptarTexto(texto.toLowerCase());
             salida.value = resultadoTexto;
+            document.getElementById("first").value = "";
         } else {
-            alert("No debe ingresar mayúsculas, números o caracteres especiales.");
+            alert("No debe ingresar números o caracteres especiales.");
         }
     }
 }
@@ -86,6 +88,9 @@ function copiarTexto() {
         .then(() => {
             if (texto.trim() === "") {
                 alert("No se encontró algún texto para copiar.");
+            } else {
+                document.getElementById("first").focus();
+                document.getElementById("second").value = "";
             }
         })
         .catch((error) => {
